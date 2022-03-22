@@ -1,0 +1,11 @@
+(executable
+ (public_name pgtest)
+ (name main)
+ (libraries 
+    lwt
+    caqti
+    caqti-lwt
+    caqti-driver-postgresql
+ )
+  (preprocess
+  (pps lwt_ppx)))
