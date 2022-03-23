@@ -1,5 +1,5 @@
 (executable
- (public_name pgtest)
+ (public_name pgtest.caqti)
  (name main)
  (libraries 
     lwt

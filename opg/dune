@@ -1,0 +1,7 @@
+(executable
+ (public_name pgtest.opg)
+ (name main)
+ (libraries 
+    postgresql
+ )
+ )

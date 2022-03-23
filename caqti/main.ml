@@ -1,5 +1,5 @@
 
-
+let pg_url = "postgresql://root:rootn@localhost:5432/main"
 
 let create_query = "create table if not exists temp (a int, b json)"
 
@@ -18,9 +18,9 @@ let param_int = 42
 let param_json = {|{"key1":1234,"key2":"thing"}|}
 
 let main = 
-    let%lwt _ = Caqti_lwt.with_connection (Uri.of_string "postgresql://root:root@localhost:5432/main") createtemp in
+    let%lwt _ = Caqti_lwt.with_connection (Uri.of_string pg_url) createtemp in
     let insert_q db = testinsert db param_int param_json in
-    let%lwt res = Caqti_lwt.with_connection (Uri.of_string "postgresql://root:root@localhost:5432/main") insert_q
+    let%lwt res = Caqti_lwt.with_connection (Uri.of_string pg_url) insert_q
     in Caqti_lwt.or_fail res
 
 let () =  
